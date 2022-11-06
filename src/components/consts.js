@@ -1,0 +1,23 @@
+export const cleanertype={
+  'CHEF':'CHEF',
+  'DRIVER':'DRIVER',
+  'CLEANER':'CLEANER',
+  'MAID':'MAID',
+  'CHILD_CARE':'CHILD_CARE',
+  'NURSE':'NURSE',
+  'GARDENER':'GARDENER',
+  'ELDERCARE':'ELDERCARE',
+   'TAILOR':'TAILOR'
+  
+}
+
+export const type={
+  'CHEF':'CHEF',
+  'DRIVER':'DRIVER',
+  'CLEANER':'CLEANER',
+  'MAID':'MAID',
+  'NURSE':'NURSE',
+  'GARDENER':'GARDENER',
+  'ELDERCARE':'ELDERCARE',
+  'TAILOR':'TAILOR'
+}
