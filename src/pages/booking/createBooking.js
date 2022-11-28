@@ -6,15 +6,7 @@ import DatePicker from "react-multi-date-picker";
 import TimePicker from "react-multi-date-picker/plugins/time_picker";
 import Moment from "react-moment";
 import "./date.css";
-import {
-  Input,
-  Button,
-  Typography,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  FormControl,
-} from "@material-ui/core";
+import { Input, Button, Typography } from "@material-ui/core";
 import { toast } from "react-toastify";
 import SearchForm from "../../components/orders/SearchForm";
 
@@ -27,6 +19,7 @@ import Layout from "../../components/layout/Index";
 
 import { connect } from "react-redux";
 import { NEW_ORDER, FETCH_CLEANER } from "../../actions/orderAction";
+import { handleInput } from "concurrently/src/defaults";
 
 const useStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -37,10 +30,11 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateAreas: `"heading heading confirmBtn" 
     "searchForm searchForm searchForm"
-    "serviceDetial serviceDetial dateTime" 
-    "type type comment"`,
+    "serviceDetial serviceDetial serviceDetial" 
+    "type type comment"
+    "dateTime dateTime dateTime"`,
     gridTemplateColumns: "5fr 4fr 3fr",
-    gridTemplateRows: "0.2fr 0.2fr 1fr 1fr",
+    gridTemplateRows: "0.2fr 0.2fr 0.8fr 1fr",
     gridColumnGap: theme.spacing(2),
     gridColumnRow: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
@@ -62,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateAreas: `"pic name hourlyRate" 
     "pic phoneNumber email"
-    "about address qualification"`,
+    "about address qualification"
+    "day date time"`,
     gridTemplateColumns: "5fr 4fr 3fr",
     gridTemplateRows: "1fr 1fr 1fr",
     gridColumnGap: theme.spacing(2),
@@ -167,8 +162,10 @@ const useStyles = makeStyles((theme) => ({
   datewrapper: {
     display: "grid",
     gridTemplateAreas: `"day month year"`,
+    justifyContent: "flex-start",
   },
   dayChip: {
+    gridArea: "day",
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
     color: "white",
@@ -354,7 +351,7 @@ const CompanyInfo = ({
         }}
         enableReinitialize
       >
-        {({ values, setFieldValue }) => (
+        {({ values, setFieldValue, handleSubmit }) => (
           <Form>
             <div className={classes.gridWrapper}>
               <Typography
@@ -388,79 +385,6 @@ const CompanyInfo = ({
                   What home would you like to be cleaned?
                 </Typography>
                 <Test />
-              </div>
-
-              <div style={{ gridArea: "dateTime" }} className={classes.card}>
-                <Typography variant="body1" className={classes.cardHeading}>
-                  When should the cleaner come
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  className={clsx(classes.cardHeading, classes.timeHeading)}
-                >
-                  <span className={classes.dot}></span>
-                  PICK A DATE
-                </Typography>
-                {/* <Moment date={values.time} format={'MMM'}/> */}
-                <div className={classes.datewrapper}>
-                  <DatePicker
-                    inputClass="day-input"
-                    value={values.date}
-                    format="DD"
-                    onChange={(value) => {
-                      setFieldValue("date", value.toDate());
-                    }}
-                  />
-                  <DatePicker
-                    inputClass="month-input"
-                    value={values.date}
-                    format="MMM"
-                    onChange={(value) => {
-                      setFieldValue("date", value.toDate());
-                    }}
-                  />
-                  <DatePicker
-                    inputClass="year-input"
-                    value={values.date}
-                    format="YYYY"
-                    onChange={(value) => {
-                      setFieldValue("date", value.toDate());
-                    }}
-                  />
-                </div>
-                <Typography variant="body1" className={classes.dayChip}>
-                  <Moment date={values.date} format="dddd" />
-                </Typography>
-                <Typography
-                  variant="body1"
-                  className={clsx(classes.cardHeading, classes.timeHeading)}
-                >
-                  <span className={classes.dot}></span>
-                  PICK A TIME
-                </Typography>
-                <DatePicker
-                  inputClass="month-input"
-                  disableDayPicker
-                  format="HH"
-                  className={classes.dateTimeInput}
-                  value={values.time}
-                  onChange={(value) => {
-                    setFieldValue("time", value);
-                  }}
-                  plugins={[<TimePicker hideSeconds />]}
-                />
-                <DatePicker
-                  inputClass="month-input"
-                  disableDayPicker
-                  format="mm"
-                  className={classes.dateTimeInput}
-                  value={values.time}
-                  onChange={(value) => {
-                    setFieldValue("time", value);
-                  }}
-                  plugins={[<TimePicker hideSeconds />]}
-                />
               </div>
 
               {/* comment  */}
@@ -544,6 +468,78 @@ const CompanyInfo = ({
                   >
                     <img src={employee?.pic?.url} width="100%" height="100%" />
                   </div>
+                  {/* Date Start  */}
+                  <div style={{ gridArea: "date" }}>
+                    <Typography variant="body1" className={clsx(classes.label)}>
+                      PICK A DATE
+                    </Typography>
+                    <div className={classes.datewrapper}>
+                      <DatePicker
+                        inputClass="day-input"
+                        value={values.date}
+                        format="DD"
+                        onChange={(value) => {
+                          setFieldValue("date", value.toDate());
+                        }}
+                      />
+                      <DatePicker
+                        inputClass="month-input"
+                        value={values.date}
+                        format="MMM"
+                        onChange={(value) => {
+                          setFieldValue("date", value.toDate());
+                        }}
+                      />
+                      <DatePicker
+                        inputClass="year-input"
+                        value={values.date}
+                        format="YYYY"
+                        onChange={(value) => {
+                          setFieldValue("date", value.toDate());
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <Typography
+                    variant="body1"
+                    className={classes.dayChip}
+                    onClick={() => {
+                      handleSubmit();
+                    }}
+                  >
+                    Hire me
+                  </Typography>
+                  <div style={{ gridArea: "time" }}>
+                    <Typography variant="body1" className={clsx(classes.label)}>
+                      PICK A TIME
+                    </Typography>
+                    <div>
+                      <DatePicker
+                        inputClass="month-input"
+                        disableDayPicker
+                        format="HH"
+                        className={classes.dateTimeInput}
+                        value={values.time}
+                        onChange={(value) => {
+                          setFieldValue("time", value);
+                        }}
+                        plugins={[<TimePicker hideSeconds />]}
+                      />
+                      <DatePicker
+                        inputClass="month-input"
+                        disableDayPicker
+                        format="mm"
+                        className={classes.dateTimeInput}
+                        value={values.time}
+                        onChange={(value) => {
+                          setFieldValue("time", value);
+                        }}
+                        plugins={[<TimePicker hideSeconds />]}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Date End  */}
                   <div style={{ gridArea: "name" }}>
                     <Typography variant="body2" className={classes.label}>
                       Name

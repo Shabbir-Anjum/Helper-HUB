@@ -2,58 +2,58 @@
   border: none;
   box-shadow: 0 0 0 0 white;
   outline: none;
-  color:Black;
-  width: 3rem;
+  color: Black;
+  width: 2rem;
   border-bottom: 2px solid black;
-  font-size: 2.2rem;
+  /* font-size: 1.2rem; */
   grid-area: day;
-  font-weight: bold;
 }
 
 .month-input {
   border: none;
   box-shadow: 0 0 0 0 white;
   outline: none;
-  color:Black;
+  color: Black;
   width: 4rem;
   border-bottom: 2px solid black;
-  font-size: 2.2rem;
+  /* font-size: 1.2rem; */
   grid-area: day;
-  font-weight: bold;
-
 }
 .year-input {
   border: none;
   box-shadow: 0 0 0 0 white;
   outline: none;
-  color:Black;
+  color: Black;
   width: 6rem;
   border-bottom: 2px solid black;
-  font-size: 2.2rem;
-  font-weight: bold;
+  /* font-size: 1.2rem; */
 }
 
 @media screen and (min-width: 1267px) {
-  .day-input{
-    width: 2.4vw;
+  .day-input {
+    width: 1.4vw;
   }
-  .month-input{
-    width: 4.5vw;
+  .month-input {
+    width: 2vw;
   }
-  .year-input{
-    width: 5vw;
+  .year-input {
+    width: 3vw;
   }
-  .year-input,.month-input,.day-input{
-    font-size: 1.7vw;
+  .year-input,
+  .month-input,
+  .day-input {
+    /* font-size: 1.2vw; */
   }
 }
 @media screen and (min-width: 960px) {
-  .year-input,.month-input,.day-input{
-    font-size: 2.2vw;
+  .year-input,
+  .month-input,
+  .day-input {
+    /* font-size: 1.2vw; */
   }
 }
 
-.day-input:focus .month-input:focus .year-input:focus{
+.day-input:focus .month-input:focus .year-input:focus {
   outline: none;
   border: white;
   color: black;

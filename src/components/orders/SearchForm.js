@@ -194,10 +194,11 @@ const SearchForm = ({ ORDER_FIND, loading, form, FETCH_CLEANERS_SEARCH }) => {
                 </div>
               )}
 
-              <div style={{ gridArea: "duration" }}>
+              <div style={{ gridArea: "duration", display: "flex" }}>
+                {/* Select a category */}
                 <Select
                   name="type"
-                  label="Type"
+                  label="Select a category"
                   options={type}
                   className={classes.select}
                 />
