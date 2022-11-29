@@ -6,7 +6,7 @@ import { Input, Button, CircularProgress, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AddIcon from "@material-ui/icons/Add";
-// import Selects from "../components/FormsUI/Selects";
+import Select from "../components/FormsUI/Selects";
 import Selects from "react-select";
 import { toast } from "react-toastify";
 
@@ -272,6 +272,11 @@ const FORM_VALIDATION = Yup.object().shape({
     .typeError("Please enter a valid zipCode")
     .required("Required"),
 });
+
+const allStatus = {
+  PART_TIME: "PART_TIME",
+  FULL_TIME: "FULL_TIME",
+};
 
 const CompanyInfo = ({
   history,
@@ -583,12 +588,18 @@ const CompanyInfo = ({
                     <Typography variant="body2" className={classes.label}>
                       Job Type
                     </Typography>
-                    <Field
+                    <Select
+                      name="jobStatus"
+                      label=""
+                      options={allStatus}
+                      className={classes.select}
+                    />
+                    {/* <Field
                       name="jobStatus"
                       fullWidth
                       as={Input}
                       className={classes.labelInput}
-                    />
+                    /> */}
                     <ErrorMessage
                       component="div"
                       style={{ color: "red" }}
