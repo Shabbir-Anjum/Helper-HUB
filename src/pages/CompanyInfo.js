@@ -2,7 +2,17 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { makeStyles } from "@material-ui/core/styles";
-import { Input, Button, CircularProgress, Typography } from "@material-ui/core";
+import {
+  Input,
+  Button,
+  CircularProgress,
+  Typography,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+} from "@material-ui/core";
 import clsx from "clsx";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AddIcon from "@material-ui/icons/Add";
@@ -292,6 +302,7 @@ const CompanyInfo = ({
 }) => {
   const classes = useStyles();
   const data = [{ label: "hi", value: "hi" }];
+  const name = "selectedOption";
 
   React.useEffect(() => {
     if (type === "customer") {
@@ -588,12 +599,28 @@ const CompanyInfo = ({
                     <Typography variant="body2" className={classes.label}>
                       Job Type
                     </Typography>
-                    <Select
-                      name="jobStatus"
-                      label=""
-                      options={allStatus}
-                      className={classes.select}
-                    />
+                    <FormControl>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        defaultValue="female"
+                        name="jobStatus"
+                        value={values.jobStatus}
+                        onChange={(event) => {
+                          setFieldValue("jobStatus", event.currentTarget.value);
+                        }}
+                      >
+                        <FormControlLabel
+                          value="Full Time"
+                          control={<Radio />}
+                          label="Full Time"
+                        />
+                        <FormControlLabel
+                          value="Part Time"
+                          control={<Radio />}
+                          label="Part Time"
+                        />
+                      </RadioGroup>
+                    </FormControl>
                     {/* <Field
                       name="jobStatus"
                       fullWidth
