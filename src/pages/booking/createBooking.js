@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateAreas: `"pic name hourlyRate" 
     "pic phoneNumber email"
     "about address qualification" 
-    "hireMe _ _"`,
+    "hireMe jobStatus _"`,
     gridTemplateColumns: "5fr 4fr 3fr",
     gridTemplateRows: "1fr 1fr 1fr .2fr",
     gridColumnGap: theme.spacing(2),
@@ -558,6 +558,14 @@ const CompanyInfo = ({
                       ) : (
                         <span className={classes.unAvailable}>' '</span>
                       )}
+                    </Typography>
+                  </div>
+                  <div style={{ gridArea: "jobStatus" }}>
+                    <Typography variant="body2" className={classes.label}>
+                      jobStatus
+                    </Typography>
+                    <Typography variant="body1" className={classes.infoField}>
+                      {employee?.business?.jobStatus}
                     </Typography>
                   </div>
                   <Typography
