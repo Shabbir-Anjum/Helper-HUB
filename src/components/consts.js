@@ -32,3 +32,30 @@ export const type = {
   ELDERCARE: "ELDERCARE",
   TAILOR: "TAILOR",
 };
+
+export const qualification = [
+  { value: "Matric", label: "Matric" },
+  { value: "Intermediate", label: "Intermediate" },
+  { value: "Bachelors", label: "Bachelors" },
+  { value: "Masters", label: "Masters" },
+];
+
+export const experience = [
+  { value: "1-2 years", label: "1-2 years" },
+  { value: "2-4 years", label: "2-4 years" },
+  { value: "4-6 years", label: "4-6 years" },
+  { value: "6+ years", label: "6+ years" }
+];
+
+export const qualification2 = {
+  Matric: "Matric",
+  InterMediate: "Intermediate",
+  Bachelors: "Bachelors",
+  Masters: "Masters",
+};
+export const experience2 = {
+  One_Two_Years: "1-2 years",
+  Two_Four_Years: "2-4 years",
+  Four_Six_Years: "4-6 years",
+  Six_Plus_Years: "6+ years",
+};

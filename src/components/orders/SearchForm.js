@@ -10,7 +10,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
-import { type } from "../consts";
+import { type, qualification2, experience2 } from "../consts";
 
 import { connect } from "react-redux";
 import { ORDER_FIND } from "../../actions/orderAction";
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     borderTopRightRadius: "13%",
     display: "grid",
     gridTemplateAreas: `"duration status date breakdown confirmBtn"`,
-    gridTemplateColumns: "1fr 1fr 1fr 1fr 1.2fr",
-    gridColumnGap: theme.spacing(2),
+    gridTemplateColumns: "10fr 1fr 1fr 1fr 1.2fr",
+    // gridColumnGap: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
       gridTemplateAreas: `"duration status"
       "date confirmBtn"
@@ -161,13 +161,18 @@ const SearchForm = ({ ORDER_FIND, loading, form, FETCH_CLEANERS_SEARCH }) => {
   const classes = useStyles();
   React.useEffect(() => {
     if (form === 1) {
-      FETCH_CLEANERS_SEARCH({ type: "DRIVER" });
+      FETCH_CLEANERS_SEARCH({
+        type: "DRIVER", about: "One_Two_Years",
+        cleaningService: "Matric",
+      });
     }
   }, []);
 
   const INITIAL_FORM_STATE = {
     allStatus: "",
     type: "DRIVER",
+    about: "One_Two_Years",
+    cleaningService: "Matric",
     date: null,
   };
 
@@ -194,13 +199,31 @@ const SearchForm = ({ ORDER_FIND, loading, form, FETCH_CLEANERS_SEARCH }) => {
                 </div>
               )}
 
-              <div style={{ gridArea: "duration", display: "flex" }}>
+              <div style={{ gridArea: "duration", display: "flex", }}>
                 {/* Select a category */}
                 <Select
                   name="type"
                   label="Select a category"
                   options={type}
                   className={classes.select}
+                />
+                <Select
+                  name="about"
+                  label="Work Experince"
+                  options={experience2}
+                  className={classes.select}
+                  style={{
+                    marginLeft: 20
+                  }}
+                />
+                <Select
+                  name="cleaningService"
+                  label="Qualification"
+                  options={qualification2}
+                  className={classes.select}
+                  style={{
+                    marginLeft: 20
+                  }}
                 />
               </div>
               {form !== 1 && (

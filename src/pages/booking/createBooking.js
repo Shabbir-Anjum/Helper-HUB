@@ -27,6 +27,7 @@ import Layout from "../../components/layout/Index";
 
 import { connect } from "react-redux";
 import { NEW_ORDER, FETCH_CLEANER } from "../../actions/orderAction";
+import { experience2 } from "../../components/consts";
 
 const useStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -616,7 +617,7 @@ const CompanyInfo = ({
                       Work Experience
                     </Typography>
                     <Typography variant="body1" className={classes.infoField}>
-                      {employee?.business?.about}{" "}
+                      {experience2[employee?.business?.about]}{" "}
                     </Typography>
                   </div>
                   {/* <div style={{gridArea:'education'}}>

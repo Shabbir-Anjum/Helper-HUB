@@ -31,7 +31,7 @@ import {
   FETCH_COMPANY_INFO,
 } from "../actions/employeeActions";
 import { ClEANER_CLEANER } from "../actions/orderAction";
-import { cleanertypeMulti } from "../components/consts";
+import { cleanertypeMulti, experience, qualification } from "../components/consts";
 
 const useStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -513,10 +513,14 @@ const CompanyInfo = ({
                     <Typography variant="body2" className={classes.label}>
                       Qualification
                     </Typography>
-                    <Field
+                    <Selects
+                      style={{
+                        gridArea: "cleaningService",
+                        background: "white",
+                      }}
                       name="cleaningService"
-                      as={Input}
-                      className={classes.labelInput}
+                      options={qualification}
+                      className={classes.select}
                     />
                     <ErrorMessage
                       component="div"
@@ -580,11 +584,14 @@ const CompanyInfo = ({
                     <Typography variant="body2" className={classes.label}>
                       Work Experience
                     </Typography>
-                    <Field
+                    <Selects
+                      style={{
+                        gridArea: "about",
+                        background: "white",
+                      }}
                       name="about"
-                      fullWidth
-                      as={Input}
-                      className={classes.labelInput}
+                      options={experience}
+                      className={classes.select}
                     />
                     <ErrorMessage
                       component="div"
