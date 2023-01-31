@@ -49,7 +49,7 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xl">
+    <Container component="main" maxWidth="xl" id='footer'>
       <Grid container spacing={2} className={classes.mainGrid}>
 
         {/* Logo */}

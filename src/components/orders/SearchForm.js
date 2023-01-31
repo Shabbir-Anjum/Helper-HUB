@@ -192,7 +192,7 @@ const SearchForm = ({ ORDER_FIND, loading, form, FETCH_CLEANERS_SEARCH }) => {
                 <div style={{ gridArea: "status" }}>
                   <Select
                     name="allStatus"
-                    label="All Status"
+                    label="Status"
                     options={allStatus}
                     className={classes.select}
                   />
@@ -231,7 +231,7 @@ const SearchForm = ({ ORDER_FIND, loading, form, FETCH_CLEANERS_SEARCH }) => {
                   <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker
                       disableToolbar
-                      label="Select Date"
+                      label="Date"
                       name="date"
                       variant="inline"
                       format="MM/dd/yyyy"

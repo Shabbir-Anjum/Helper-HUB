@@ -7,7 +7,7 @@ export const cleanertype = {
   NURSE: "NURSE",
   GARDENER: "GARDENER",
   ELDERCARE: "ELDERCARE",
-  TAILOR: "TAILOR",
+ // TAILOR: "TAILOR",
 };
 
 export const cleanertypeMulti = [
@@ -19,7 +19,7 @@ export const cleanertypeMulti = [
   { value: "NURSE", label: "NURSE" },
   { value: "GARDENER", label: "GARDENER" },
   { value: "ELDERCARE", label: "ELDERCARE" },
-  { value: "TAILOR", label: "TAILOR" },
+  //{ value: "TAILOR", label: "TAILOR" },
 ];
 
 export const type = {
@@ -30,7 +30,8 @@ export const type = {
   NURSE: "NURSE",
   GARDENER: "GARDENER",
   ELDERCARE: "ELDERCARE",
-  TAILOR: "TAILOR",
+ // TAILOR: "TAILOR",
+  CHILD_CARE :"CHILD_CARE",
 };
 
 export const qualification = [
@@ -41,10 +42,10 @@ export const qualification = [
 ];
 
 export const experience = [
-  { value: "1-2 years", label: "1-2 years" },
-  { value: "2-4 years", label: "2-4 years" },
-  { value: "4-6 years", label: "4-6 years" },
-  { value: "6+ years", label: "6+ years" }
+  { value: "One_Two_Years", label: "1-2 years" },
+  { value: "Two_Four_Years", label: "2-4 years" },
+  { value: "Four_Six_Years", label: "4-6 years" },
+  { value: "Six_Plus_Years", label: "6+ years" }
 ];
 
 export const qualification2 = {

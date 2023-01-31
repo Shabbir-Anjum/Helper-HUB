@@ -1,5 +1,6 @@
 import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+
 import clsx from "clsx";
 import {
   Box,
@@ -16,26 +17,28 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 // import icon from '/image2vector.svg'
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
-const pages = ["Become a cleaner", "Services", "Products", "FAQ"];
+const pages = ["Home", "Services", "Contact", "Sign Up", "Login"];
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     backgroundColor: theme.palette.primary.light,
-    padding: "3rem",
+    padding: "1rem",
     boxShadow: "0px 0px white",
     [theme.breakpoints.down("sm")]: {
       padding: "0.3rem",
     },
   },
   navBtn: {
-    fontSize: "1.5rem",
+    fontSize: "1rem",
     color: theme.palette.primary.lightDark,
     paddingRight: "2rem",
   },
   logo: {
-    width: theme.spacing(18),
+    width: "30%",
     display: "flex",
+
     // padding:theme.spacing(3),
     paddingBottom: "1.2vw",
     [theme.breakpoints.down("sm")]: {
@@ -74,18 +77,24 @@ const Header = ({ history }) => {
   // };
 
   return (
-    <AppBar
-      className={clsx(
-        classes.appbar,
-        history.location.pathname === "/pricing" && classes.pricingPage
-      )}
-      position="static"
-      sx={{ boxShadow: "none", color: "black" }}
-    >
+    // <AppBar
+    //   className={clsx(
+    //     classes.appbar,
+    //     history.location.pathname === "/pricing" && classes.pricingPage
+    //   )}
+    //   position="static"
+    //   sx={{ boxShadow: "none", color: "black" }}
+    // >
+    <AppBar className={classes.appbar}>
       <Container component="main" maxWidth="xl">
         <Toolbar disableGutters>
-          <NavLink to="/" style={{ textDecoration: "none" }}>
-            <div className={classes.logo}>
+          <HashLink
+            to="#hero"
+            style={{ textDecoration: "none" }}
+            id="logo1"
+            smooth
+          >
+            <div className={classes.logo} id="logo2">
               <img
                 alt=""
                 src="http://app.wandcleaning.pro/wandBluefav.png"
@@ -94,7 +103,7 @@ const Header = ({ history }) => {
               />
               <img alt="" src="wordcyan.png" width={"70%"} />
             </div>
-          </NavLink>
+          </HashLink>
 
           <Box
             sx={{
@@ -131,45 +140,161 @@ const Header = ({ history }) => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <NavLink
-                  to="/pricing"
-                  variant="body2"
-                  style={{ textDecoration: "none" }}
-                >
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography style={{ color: "black" }} textAlign="center">
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                </NavLink>
-              ))}
+              {pages.map((page) => {
+                return (
+                  <>
+                    {page === "Services" ? (
+                      <HashLink
+                        to="#services"
+                        variant="body2"
+                        style={{ textDecoration: "none" }}
+                        smooth
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            style={{ color: "black" }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </HashLink>
+                    ) : page === "Contact" ? (
+                      <HashLink
+                        to="#footer"
+                        variant="body2"
+                        style={{ textDecoration: "none" }}
+                        smooth
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            style={{ color: "black" }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </HashLink>
+                    ) : page === "Login" ? (
+                      <HashLink
+                        to="/login"
+                        variant="body2"
+                        style={{ textDecoration: "none" }}
+                        smooth
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            style={{ color: "black" }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </HashLink>
+                    ) : page === "Sign Up" ? (
+                      <HashLink
+                        to="/register"
+                        variant="body2"
+                        style={{ textDecoration: "none" }}
+                        smooth
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            style={{ color: "black" }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </HashLink>
+                    ) : (
+                      <HashLink
+                        to="#hero"
+                        variant="body2"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography
+                            style={{ color: "black" }}
+                            textAlign="center"
+                          >
+                            {page}
+                          </Typography>
+                        </MenuItem>
+                      </HashLink>
+                    )}
+                  </>
+                );
+              })}
             </Menu>
           </Box>
           <Box
+            id="box1"
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "right",
+              justifyContent: "space-around",
             }}
           >
-            {pages.map((page) => (
-              <NavLink
-                to="/pricing"
-                variant="body2"
-                style={{ textDecoration: "none" }}
-              >
-                <Button
+            {pages.map((page, index) => {
+              return (
+                <>
+                  {page === "Services" ? (
+                    <HashLink
+                      to="#services"
+                      variant="body2"
+                      style={{ textDecoration: "none" }}
+                      smooth
+                    >
+                      <button className="navLink">{page}</button>
+                    </HashLink>
+                  ) : page === "Contact" ? (
+                    <HashLink
+                      to="#footer"
+                      variant="body2"
+                      style={{ textDecoration: "none" }}
+                      smooth
+                    >
+                      <button className="navLink">{page}</button>
+                    </HashLink>
+                  ) : page === "Sign Up" ? (
+                    <NavLink
+                      to="/register"
+                      variant="body2"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="navLink">{page}</button>
+                    </NavLink>
+                  ) : page === "Login" ? (
+                    <NavLink
+                      to="/login"
+                      variant="body2"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="navLink">{page}</button>
+                    </NavLink>
+                  ) : (
+                    <HashLink
+                      to="#hero"
+                      variant="body2"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <button className="navLink">{page}</button>
+                    </HashLink>
+                  )}
+
+                  {/* <Button
                   key={page}
                   style={{ color: "black" }}
                   onClick={handleCloseNavMenu}
-                  className={classes.navBtn}
+                  className="navLink"
                   sx={{ my: 2, mx: 3, display: "block" }}
                 >
-                  {page}
-                </Button>
-              </NavLink>
-            ))}
+                  {page} {index}
+                </Button> */}
+                </>
+              );
+            })}
           </Box>
         </Toolbar>
       </Container>

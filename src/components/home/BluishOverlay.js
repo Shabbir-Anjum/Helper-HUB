@@ -86,12 +86,12 @@ const BluishOverlay = () => {
           >
             GET STARTED
           </Button>
-          <Button
+          {/* <Button
             className={clsx(classes.Button,classes.borderNull)}
             variant="outlined"
           >
             How it works?
-          </Button>
+          </Button> */}
         </div>
       </Container>
     </div>

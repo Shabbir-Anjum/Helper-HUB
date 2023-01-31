@@ -5,6 +5,39 @@
 .form-control {
   margin-bottom: 20px;
 }
+.navLink {
+  border-width: 1px;
+  background-color: #f2fcfc;
+  border-style: solid;
+  border-color: #00c5c8;
+  padding: 8px 18px 8px 18px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navLink:hover {
+  background-color: #00c5c8;
+  cursor: pointer;
+}
+
+#logo1 {
+  padding-top: 10px;
+}
+@media screen and (max-width: 1180px) {
+  #logo1 {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1190px) {
+  #logo1 {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 955px) {
+  #logo1 {
+    width: 70%;
+  }
+}
 
 .error {
   color: red;
@@ -38,6 +71,10 @@
 
 .form-control {
   margin-bottom: 20px;
+}
+#work{
+ 
+  width: 120px;
 }
 
 .error {

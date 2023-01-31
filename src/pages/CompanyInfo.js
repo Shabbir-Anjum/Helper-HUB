@@ -519,6 +519,7 @@ const CompanyInfo = ({
                         background: "white",
                       }}
                       name="cleaningService"
+                      onChange={(v) => {setFieldValue("cleaningService", v.value)}}
                       options={qualification}
                       className={classes.select}
                     />
@@ -566,7 +567,7 @@ const CompanyInfo = ({
                       startIcon={<AddIcon />}
                       className={classes.chooseFile}
                     >
-                      Choose a Card
+                      upload cnic
                       <input
                         type="file"
                         hidden
@@ -585,11 +586,14 @@ const CompanyInfo = ({
                       Work Experience
                     </Typography>
                     <Selects
+                    id="work"
                       style={{
                         gridArea: "about",
                         background: "white",
                       }}
                       name="about"
+                      onChange={(v) => {setFieldValue("about", v.value)}}
+                      
                       options={experience}
                       className={classes.select}
                     />

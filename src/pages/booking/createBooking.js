@@ -370,7 +370,7 @@ const CompanyInfo = ({
                 <span className={classes.desktopView}>{" - "}</span>
                 Personal Details
               </Typography>
-              <Button
+              {/* <Button
                 style={{ gridArea: "confirmBtn" }}
                 className={classes.confirmBtn}
                 type="submit"
@@ -380,7 +380,7 @@ const CompanyInfo = ({
                 }
               >
                 Proceed to Payment
-              </Button>
+              </Button> */}
               <div style={{ gridArea: "searchForm" }}>
                 <SearchForm form={1} />
               </div>
@@ -579,7 +579,7 @@ const CompanyInfo = ({
                       handleSubmit();
                     }}
                   >
-                    Hire ME
+                    HIRE ME
                   </Typography>
                   <Typography
                     variant="body1"

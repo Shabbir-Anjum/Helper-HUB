@@ -12,6 +12,8 @@ import clsx from 'clsx'
 const useStyles = makeStyles((theme) => ({
   outer:{
     background:theme.palette.primary.light,
+    paddingTop: theme.spacing(6),
+
   },
   mainContainer:{
     marginBottom:theme.spacing(12),
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   logo:{
-    paddingBottom:theme.spacing(6)
+    // paddingBottom:theme.spacing(6)
   },
   heading:{
     fontWeight:'bold',
@@ -65,6 +67,10 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   font:{
+    textDecoration:'none'
+  },
+  font1:{
+    fontSize: '1rem',
     textDecoration:'none'
   },
   buttons:{
@@ -127,7 +133,7 @@ const HeroSection = () => {
 
   const classes = useStyles();
   return (
-    <div className={classes.outer}>
+    <div className={classes.outer} id="hero">
       <Container className={classes.mainContainer} component="main" maxWidth="xl">
         <div className={classes.container}>
           <Typography variant='h4' className={classes.heading}>
@@ -147,18 +153,22 @@ const HeroSection = () => {
                 GET STARTED
               </Button>
             </NavLink>
-            <Button
+            <NavLink to="/register" variant="body2" className={classes.font1}>
+              
+            {/* <Button
               className={clsx(classes.Button,classes.borderNull)}
               variant="outlined"
-            >
-              How it works?
-            </Button>
+            > */}
+            <Typography> Become a helper or recruiter?</Typography>
+             
+            {/* </Button> */}
+            </NavLink>
           </div>
-          <div className={classes.icons}>
+          {/* <div className={classes.icons}>
             <Facebook className={classes.iconFill}/>
             <Instagram className={classes.iconFill}/>
             <Twitter className={classes.iconFill}/>
-          </div>
+          </div> */}
         </div>
         <div className={classes.imgContainer}>
           <img width='100%' alt='' src='Mask-Group-1.png'/>

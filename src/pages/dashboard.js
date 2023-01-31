@@ -369,9 +369,9 @@ const Dashboard = ({appointmentList,FETCH_STATS,stats,ORDER_FEATURED,firstName,F
 						</Typography>
 						<Typography variant='h5' className={classes.statVal}>
 							{stats?.totalBookings} 
-							<span className={classes.cardChip}>
-								25% <ArrowUpwardIcon className={classes.icon}/>
-							</span>
+							{/* <span className={classes.cardChip}>
+							 <ArrowUpwardIcon className={classes.icon}/>
+							</span> */}
 						</Typography>
 					</div>
 					<div style={{gridArea:'stat2'}} className={classes.mobileStatTwo}>
@@ -387,7 +387,7 @@ const Dashboard = ({appointmentList,FETCH_STATS,stats,ORDER_FEATURED,firstName,F
 							Total Revenue
 						</Typography>
 						<Typography variant='h5' className={classes.statVal}>
-							{stats?.totalRevenue?.toFixed(1)}
+							{stats?.totalRevenue?.toFixed(1)} PKR
 						</Typography>
 					</div>
 					<div style={{gridArea:'stat4'}} className={classes.mobileStatTwo}>

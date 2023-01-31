@@ -80,7 +80,7 @@ export const UNSET_EMPLOYEE_LOADING = () => async (dispatch) => {
 export const FETCH_CLEANERS_SEARCH = (form_data) => async (dispatch) => {
   try {
     dispatch({ type: SET_LOADING_EMPLOYEE });
-    const res = await axios(`${url}/cleaners?business.type_contains=${form_data.type}&business.about_contains=${form_data.about}&business.cleaningService_contains=${form_data.cleaningService}`);
+    const res = await axios(`${url}/cleaners?type_contains=${form_data.type}&business.about_contains=${form_data.about}&business.cleaningService_contains=${form_data.cleaningService}`);
     console.log(res);
     dispatch({ type: EMPLOYEE_LIST_SUCCESS, payload: res.data });
   } catch (error) {

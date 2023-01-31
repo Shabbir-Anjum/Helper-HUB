@@ -96,7 +96,7 @@ const Payments = () => {
   ]
 
   return (
-    <Container className={classes.mainContainer} component="main" maxWidth="xl">
+    <Container className={classes.mainContainer} component="main" maxWidth="xl" id='services'>
       <Typography variant='h5' className={classes.bold}>
         HOW WE WORK
       </Typography>

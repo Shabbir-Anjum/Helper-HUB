@@ -328,16 +328,16 @@ const Index = ({LOGOUT,NEXT_SERVICE,nextService,children,type,customer,cleanerIn
           {/* </MobileView> */}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchIcon className={classes.icon}/>
+              {/* <SearchIcon className={classes.icon}/> */}
             </div>
-            <InputBase
+            {/* <InputBase
               placeholder="Search Anything…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-            />
+            /> */}
           </div>
           {
             type === 'customer' &&
