@@ -28,6 +28,7 @@ import Layout from "../../components/layout/Index";
 import { connect } from "react-redux";
 import { NEW_ORDER, FETCH_CLEANER } from "../../actions/orderAction";
 import { experience2 } from "../../components/consts";
+import { url } from "../../actions/customAxios";
 
 const useStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -546,7 +547,11 @@ const CompanyInfo = ({
                       backgroundSize: "cover",
                     }}
                   >
-                    <img src={employee?.pic?.url} width="100%" height="100%" />
+                    <img
+                      src={url + employee?.pic?.url}
+                      width="100%"
+                      height="100%"
+                    />
                   </div>
                   <div style={{ gridArea: "name" }}>
                     <Typography variant="body2" className={classes.label}>

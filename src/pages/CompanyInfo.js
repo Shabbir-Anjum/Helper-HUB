@@ -31,7 +31,11 @@ import {
   FETCH_COMPANY_INFO,
 } from "../actions/employeeActions";
 import { ClEANER_CLEANER } from "../actions/orderAction";
-import { cleanertypeMulti, experience, qualification } from "../components/consts";
+import {
+  cleanertypeMulti,
+  experience,
+  qualification,
+} from "../components/consts";
 
 const useStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -478,7 +482,7 @@ const CompanyInfo = ({
                         />
                       ) : (
                         <img
-                          src={imageUrl ? imageUrl : `logo512.png`}
+                          src={imageUrl ? `${url}${imageUrl}` : `logo512.png`}
                           alt=""
                           height="90%"
                           width="90%"
@@ -519,7 +523,9 @@ const CompanyInfo = ({
                         background: "white",
                       }}
                       name="cleaningService"
-                      onChange={(v) => {setFieldValue("cleaningService", v.value)}}
+                      onChange={(v) => {
+                        setFieldValue("cleaningService", v.value);
+                      }}
                       options={qualification}
                       className={classes.select}
                     />
@@ -586,14 +592,15 @@ const CompanyInfo = ({
                       Work Experience
                     </Typography>
                     <Selects
-                    id="work"
+                      id="work"
                       style={{
                         gridArea: "about",
                         background: "white",
                       }}
                       name="about"
-                      onChange={(v) => {setFieldValue("about", v.value)}}
-                      
+                      onChange={(v) => {
+                        setFieldValue("about", v.value);
+                      }}
                       options={experience}
                       className={classes.select}
                     />
