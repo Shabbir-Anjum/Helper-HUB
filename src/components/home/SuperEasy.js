@@ -90,7 +90,7 @@ const SuperEasy = () => {
           After HulperHub cleaners my apartment always clean and fresh. Plus I know that with HulperHub cleaners my home is secure.
         </Typography>
         <Typography variant='h4' className={classes.author}>
-          Uzair, Lahore, Pk.
+          Shabbir, Faisalabad, Pk.
         </Typography>
         <Typography variant='h2' className={classes.author}>
           <span className={classes.dot}></span>
@@ -98,7 +98,7 @@ const SuperEasy = () => {
         </Typography>
       </div>
       <div className={classes.imgContainer}>
-        <img style={{width:'50vw'}} alt='' src='uzairFullCrop.jpeg'/>
+        <img style={{width:'50vw'}} alt='' src='shabbir1.png'/>
       </div>
     </div>
   )

@@ -66,7 +66,7 @@ const Footer = () => {
             Services
           </Typography>
           <Typography variant='h6' className={classes.fontBold}>
-            Products
+            
           </Typography>
           <Typography variant='h6' className={classes.fontBold}>
             FQA
@@ -95,9 +95,9 @@ const Footer = () => {
             Become a Helper
           </Typography>
           <Typography variant='h6' className={classes.fontBold}>
-            LDA lahore Avenue, 0301003393
+            GC Faisalabad 03318701099
             <div className={classes.fontBold}>
-              E-Mail: uzair@gmail.com 
+              E-Mail: mahrshabbir768@gmail.com 
             </div>
             <div className={classes.fontBold}>
               Web Site: helperHub.com

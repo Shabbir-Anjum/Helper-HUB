@@ -310,7 +310,7 @@ const CompanyInfo = ({BOOKING_PAYMENT,service,order,business,onBoarding,employee
 
   const paidBy={
     BY_HAND:'ByHand',
-    STRIPE:'Stripe',
+    //STRIPE:'Stripe',
   }
 
   const FORM_VALIDATION = Yup.object().shape({

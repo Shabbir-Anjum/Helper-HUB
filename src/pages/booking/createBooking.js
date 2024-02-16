@@ -574,7 +574,7 @@ const CompanyInfo = ({
                       {employee?.business?.jobStatus}
                     </Typography>
                   </div>
-                  <Typography
+                  <Typography 
                     variant="body1"
                     className={classes.dayChip}
                     style={{

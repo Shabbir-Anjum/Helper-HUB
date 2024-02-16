@@ -97,10 +97,10 @@ const Footer = () => {
           <Typography variant='body1' className={classes.subHeading}>
             4818 Washington Blvd St. Louis, MO 63108 Phone: 1-844-GET-WAND
             <div className={classes.subHeading}>
-              E-Mail: uzair@gmail.com
+              E-Mail: mahrshabbir768@gmail.com
             </div>
             <div className={classes.subHeading}>
-              Web Site: Wandusa.com
+              Web Site: shabbir.com
             </div>
           </Typography>
         </Grid>
